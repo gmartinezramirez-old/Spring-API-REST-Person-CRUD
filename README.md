@@ -2,7 +2,7 @@
 [Active] REST web service using Spring JPA, Spring MVC and Spring Boot. 
 
 <a href="http://www.repostatus.org/#active"><img src="http://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed." /></a>
-[![Build Status](https://travis-ci.org/gmartinezramirez/Web-service-Spring.svg?branch=master)](https://travis-ci.org/gmartinezramirez/Web-service-Spring)
+[![Build Status](https://travis-ci.org/gmartinezramirez/Spring-API-REST-Person-CRUD.svg?branch=master)](https://travis-ci.org/gmartinezramirez/Spring-API-REST-Person-CRUD)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7709ced7f8ea421e9a3c3ed2310cff49)](https://www.codacy.com/app/gonzalo-martinez-ra/Spring-API-REST-Person-CRUD?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gmartinezramirez/Spring-API-REST-Person-CRUD&amp;utm_campaign=Badge_Grade)
 
 Construir un servicio web REST en Spring usando Spring JPA, Spring MVC y Spring BOOT que realice operaciones GET, PUT, POST y DELETE sobre una entidad Persona (atributos: Nombre y Apellido). 
