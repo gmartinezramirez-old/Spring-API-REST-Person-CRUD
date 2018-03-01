@@ -1,0 +1,111 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Spring-API-REST-Person-CRUD REST petitions",
+		"_postman_id": "86a8decc-7e73-a718-bdb3-079633cdd222",
+		"description": "# Requests for API REST Crud persons.\n\n* Include: GET, DEL, PUT, POST.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "01-POST: add a new person in the DB",
+			"request": {
+				"url": "localhost:8080/api/v1.0/persons/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"firstName\": \"Gonzalo\", \"lastName\":\"Martinez\"}"
+				},
+				"description": "* Creating a new Person using POST /api/v1.0/persons API\n* localhost:8080/api/v1.0/persons/\n* Example: {\"firstName\": \"Gonzalo\", \"lastName\":\"Martinez\"}"
+			},
+			"response": []
+		},
+		{
+			"name": "02-GET: retrieving all persons stored in DB",
+			"request": {
+				"url": "localhost:8080/api/v1.0/persons/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"firstName\": \"Elton\", \"lastName\":\"John\"}"
+				},
+				"description": "* Retrieving all Persons using GET /api/v1.0/persons API\n* localhost:8080/api/v1.0/persons/"
+			},
+			"response": []
+		},
+		{
+			"name": "03-GET: retrieving a single Person by id",
+			"request": {
+				"url": "localhost:8080/api/v1.0/persons/1",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"firstName\": \"Elton\", \"lastName\":\"John\"}"
+				},
+				"description": "* Retrieving a single Person using GET /api/v1.0/persons/{personId} API\n* localhost:8080/v1.0/api/persons/1"
+			},
+			"response": []
+		},
+		{
+			"name": "04- PUT: updating a Person by his id",
+			"request": {
+				"url": "localhost:8080/api/v1.0/persons/1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"firstName\": \"Frederic\", \"lastName\":\"Chopin\"}"
+				},
+				"description": "* Updating a Person using PUT /api/v1.0/persons/{personId} API\n* localhost:8080/api/v1.0/persons/1\n* Example: {\"firstName\": \"Frederic\", \"lastName\":\"Chopin\"}"
+			},
+			"response": []
+		},
+		{
+			"name": "05- DEL: deleting a Person by id stored in DB",
+			"request": {
+				"url": "localhost:8080/api/v1.0/persons/1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"firstName\": \"Elton\", \"lastName\":\"John\"}"
+				},
+				"description": "* Deleting a Person using DELETE /api/v1.0/persons/{personId} API\n* localhost:8080/api/v1.0/persons/1"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,5 +1,7 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
+
+### Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+#target
+#/!.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
 .apt_generated

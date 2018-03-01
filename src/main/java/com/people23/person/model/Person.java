@@ -12,6 +12,8 @@ import java.util.Date;
 /**
  * Created by gmartinezramirez on 01/03/18.
  */
+
+// TODO (gmartinezramirez): create a interface for this.
 @Entity
 @Table(name = "persons")
 @EntityListeners(AuditingEntityListener.class)
