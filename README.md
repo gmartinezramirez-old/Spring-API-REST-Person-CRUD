@@ -1,6 +1,9 @@
 # Web-service-Spring
 [Active] REST web service using Spring JPA, Spring MVC and Spring Boot. 
 
+<a href="http://www.repostatus.org/#active"><img src="http://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed." /></a>
+[![Build Status](https://travis-ci.org/gmartinezramirez/Web-service-Spring.svg?branch=master)](https://travis-ci.org/gmartinezramirez/Web-service-Spring)
+
 Construir un servicio web REST en Spring usando Spring JPA, Spring MVC y Spring BOOT que realice operaciones GET, PUT, POST y DELETE sobre una entidad Persona (atributos: Nombre y Apellido). 
 
 ## Instructions
