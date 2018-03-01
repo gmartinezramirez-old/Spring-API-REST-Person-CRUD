@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.people23.person.PersonApplicationTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.242 sec - in com.people23.person.PersonApplicationTests
