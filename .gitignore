@@ -2,6 +2,13 @@
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar
 
+*.class
+target/
+.settings/
+.project
+.classpath
+hs_err_pid*
+
 ### STS ###
 .apt_generated
 .classpath
@@ -12,6 +19,7 @@
 
 ### IntelliJ IDEA ###
 .idea
+.idea/
 *.iws
 *.iml
 *.ipr
