@@ -16,50 +16,50 @@ import java.util.List;
 @RequestMapping("/api/v1.0")
 public class PersonController {
 
-    @Autowired
-    PersonRepository personRepository;
+	@Autowired
+	PersonRepository personRepository;
 
-    @GetMapping("/persons")
-    public List<Person> getAllPersons() {
-        return personRepository.findAll();
-    }
+	@GetMapping("/persons")
+	public List<Person> getAllPersons() {
+		return personRepository.findAll();
+	}
 
-    @GetMapping("/persons/{id}")
-    public ResponseEntity<Person> getPersonById(@PathVariable(value = "id") Long personId) {
-        Person person = personRepository.findOne(personId);
-        if(person == null) {
-            return ResponseEntity.notFound().build();
-        }
-        return ResponseEntity.ok().body(person);
-    }
+	@GetMapping("/persons/{id}")
+	public ResponseEntity<Person> getPersonById(@PathVariable(value = "id") Long personId) {
+		Person person = personRepository.findOne(personId);
+		if (person == null) {
+			return ResponseEntity.notFound().build();
+		}
+		return ResponseEntity.ok().body(person);
+	}
 
-    @PostMapping("/persons")
-    public Person createPerson(@Valid @RequestBody Person person) {
-        return personRepository.save(person);
-    }
+	@PostMapping("/persons")
+	public Person createPerson(@Valid @RequestBody Person person) {
+		return personRepository.save(person);
+	}
 
-    @PutMapping("/persons/{id}")
-    public ResponseEntity<Person> updatePerson(@PathVariable(value = "id") Long personId,
-                                           @Valid @RequestBody Person personDetails) {
-        Person person = personRepository.findOne(personId);
-        if(person == null) {
-            return ResponseEntity.notFound().build();
-        }
-        person.setFirstName(personDetails.getFirstName());
-        person.setLastName(personDetails.getLastName());
+	@PutMapping("/persons/{id}")
+	public ResponseEntity<Person> updatePerson(@PathVariable(value = "id") Long personId,
+											   @Valid @RequestBody Person personDetails) {
+		Person person = personRepository.findOne(personId);
+		if (person == null) {
+			return ResponseEntity.notFound().build();
+		}
+		person.setFirstName(personDetails.getFirstName());
+		person.setLastName(personDetails.getLastName());
 
-        Person updatedPerson = personRepository.save(person);
-        return ResponseEntity.ok(updatedPerson);
-    }
+		Person updatedPerson = personRepository.save(person);
+		return ResponseEntity.ok(updatedPerson);
+	}
 
-    @DeleteMapping("/persons/{id}")
-    public ResponseEntity<Person> deletePerson(@PathVariable(value = "id") Long personId) {
-        Person person = personRepository.findOne(personId);
-        if(person == null) {
-            return ResponseEntity.notFound().build();
-        }
+	@DeleteMapping("/persons/{id}")
+	public ResponseEntity<Person> deletePerson(@PathVariable(value = "id") Long personId) {
+		Person person = personRepository.findOne(personId);
+		if (person == null) {
+			return ResponseEntity.notFound().build();
+		}
 
-        personRepository.delete(person);
-        return ResponseEntity.ok().build();
-    }
+		personRepository.delete(person);
+		return ResponseEntity.ok().build();
+	}
 }
