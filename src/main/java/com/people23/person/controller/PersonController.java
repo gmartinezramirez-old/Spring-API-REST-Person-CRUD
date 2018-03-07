@@ -18,15 +18,15 @@ public class PersonController {
 
 	@Autowired
 	PersonRepository personRepository;
-
+	
 	@GetMapping("/persons")
 	public List<Person> getAllPersons() {
 		return personRepository.findAll();
 	}
 
 	@GetMapping("/persons/{id}")
-	public ResponseEntity<Person> getPersonById(@PathVariable(value = "id") Long personId) {
-		Person person = personRepository.findOne(personId);
+	public ResponseEntity<Person> getPersonById(@PathVariable(value = "id") Long id) {
+		Person person = personRepository.findOne(id);
 		if (person == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -39,9 +39,9 @@ public class PersonController {
 	}
 
 	@PutMapping("/persons/{id}")
-	public ResponseEntity<Person> updatePerson(@PathVariable(value = "id") Long personId,
+	public ResponseEntity<Person> updatePerson(@PathVariable(value = "id") Long id,
 											   @Valid @RequestBody Person personDetails) {
-		Person person = personRepository.findOne(personId);
+		Person person = personRepository.findOne(id);
 		if (person == null) {
 			return ResponseEntity.notFound().build();
 		}
@@ -53,8 +53,8 @@ public class PersonController {
 	}
 
 	@DeleteMapping("/persons/{id}")
-	public ResponseEntity<Person> deletePerson(@PathVariable(value = "id") Long personId) {
-		Person person = personRepository.findOne(personId);
+	public ResponseEntity<Person> deletePerson(@PathVariable(value = "id") Long id) {
+		Person person = personRepository.findOne(id);
 		if (person == null) {
 			return ResponseEntity.notFound().build();
 		}
