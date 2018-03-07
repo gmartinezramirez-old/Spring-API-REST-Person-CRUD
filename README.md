@@ -8,6 +8,9 @@
 + Spring web service of a CRUD of persons using Spring JPA, Spring MVC and Spring Boot, including GET, PUT, POST and DELETE operations for a person entity.
 + Attributes: firstname and lastname.
 
+
+<p align="center"><img width=95% src="https://github.com/gmartinezramirez/Spring-API-REST-Person-CRUD/blob/master/docs/architecture.png"></p>
+
 <!-- In this section add TOC for easy navegation -->
 <p align="center">
 <b><a href="#requeriments">Requeriments</a></b>
