@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.people23.person.exception.PersonNotFoundException;
+
 import javax.validation.Valid;
 import java.util.List;
 
@@ -25,40 +27,35 @@ public class PersonController {
 	}
 
 	@GetMapping("/persons/{id}")
-	public ResponseEntity<Person> getPersonById(@PathVariable(value = "id") Long id) {
-		Person person = personRepository.findOne(id);
-		if (person == null) {
-			return ResponseEntity.notFound().build();
-		}
-		return ResponseEntity.ok().body(person);
+	public Person getPersonById(@PathVariable(value = "id") Long id) {
+	    return personRepository.findById(id)
+	            .orElseThrow(() -> new PersonNotFoundException("Person", "id", id));
 	}
-
+	
 	@PostMapping("/persons")
 	public Person createPerson(@Valid @RequestBody Person person) {
 		return personRepository.save(person);
 	}
 
 	@PutMapping("/persons/{id}")
-	public ResponseEntity<Person> updatePerson(@PathVariable(value = "id") Long id,
-											   @Valid @RequestBody Person personDetails) {
-		Person person = personRepository.findOne(id);
-		if (person == null) {
-			return ResponseEntity.notFound().build();
-		}
+	public Person updatePerson(@PathVariable(value = "id") Long id, @Valid @RequestBody Person personDetails) {
+
+		Person person = personRepository.findById(id)
+				.orElseThrow(() -> new PersonNotFoundException("Person", "id", id));
+		
 		person.setFirstName(personDetails.getFirstName());
 		person.setLastName(personDetails.getLastName());
 
 		Person updatedPerson = personRepository.save(person);
-		return ResponseEntity.ok(updatedPerson);
+		return updatedPerson;
 	}
 
 	@DeleteMapping("/persons/{id}")
 	public ResponseEntity<Person> deletePerson(@PathVariable(value = "id") Long id) {
-		Person person = personRepository.findOne(id);
-		if (person == null) {
-			return ResponseEntity.notFound().build();
-		}
-
+		
+		Person person = personRepository.findById(id)
+				.orElseThrow(() -> new PersonNotFoundException("Person", "id", id));
+		
 		personRepository.delete(person);
 		return ResponseEntity.ok().build();
 	}

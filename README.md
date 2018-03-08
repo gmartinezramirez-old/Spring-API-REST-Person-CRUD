@@ -27,6 +27,7 @@
 * JDK or OpenJDK - 1.8.x
 * Maven - 3.x.x
 * MySQL - 5.x.x or MariaDB 10.x.x
+* Spring - 2.0.0.RELEASE (inclued in pom.xml)
 
 * Tested on:
 * GNU/Linux Solus 3
@@ -80,6 +81,12 @@ java -jar target/person-1.0.0.jar
 
 ```bash
 mvn spring-boot:run
+```
+
++ Also, you can run the app without packaging it using:
+
+```bash
+./run.sh
 ```
 
 <p align="center"><img width=95% src="https://github.com/gmartinezramirez/Spring-API-REST-Person-CRUD/blob/master/docs/mvn-spring-bootrun.gif"></p>
